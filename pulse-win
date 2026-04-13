@@ -1,11 +1,7 @@
-function FindProxyForURL(url, host)
-{
-    if
-        isInNet (dnsDomainIs(host, "*.telegram.org")) ||
-	(dnsDomainIs(host, "*.telegram.me") ||
-	(dnsDomainIs(host, "*.t.me"))
-        return "HTTP 95.81.118.207:443";
-        
-    else
-        return "DIRECT";
+function FindProxyForURL(url, host) {
+if (shExpMatch(host,"*.telegram.org")) {
+    return "HTTP 95.81.118.207:443;";
+ }  
+ alert("DIRECT connection");
+ return "DIRECT";
 }
