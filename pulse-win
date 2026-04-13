@@ -1,6 +1,6 @@
 function FindProxyForURL(url, host) {
 if (shExpMatch(host,"*.telegram.org")) {
-    return "HTTP 95.81.118.207:443;";
+    return "PROXY 95.81.118.207:443;";
  }  
  alert("DIRECT connection");
  return "DIRECT";
