@@ -1,15 +1,7 @@
-function FindProxyForURL(url, host)
-
-{
-
- if (shExpMatch(host, "*.telegram.org))
-
-  return "PROXY 95.81.118.207:16235; " +
-
-   "PROXY 95.81.118.207:16235";
-
- else if (shExpMatch(host, "*.t.me"))
-
-  return "PROXY 95.81.118.207:16235; "
-
+function FindProxyForURL(url, host) {
+if (shExpMatch(host,"*.telegram.org")) {
+    return "SOCKS5 95.81.118.207:16235;";
+ }  
+ alert("DIRECT connection");
+ return "DIRECT";
 }
