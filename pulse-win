@@ -1,7 +1,23 @@
 function FindProxyForURL(url, host) {
-if (shExpMatch(host,"*.telegram.org")) {
-    return "PROXY 2.26.138.48:6348;";
- }  
- alert("DIRECT connection");
- return "DIRECT";
+    var proxy = "PROXY 2.26.138.48:6348";
+
+    if (
+        host == "telegram.org" ||
+        shExpMatch(host, "*.telegram.org") ||
+        host == "t.me" ||
+        shExpMatch(host, "*.t.me")
+
+        host == "kasm.com" ||
+        shExpMatch(host, "*.kasm.com") ||
+
+        host == "terraform.io" ||
+        shExpMatch(host, "*.terraform.io") ||
+
+        host == "vector.dev" ||
+        shExpMatch(host, "*.vector.dev")
+    ) {
+        return proxy;
+    }
+
+    return "DIRECT";
 }
