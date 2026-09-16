@@ -1,7 +1,9 @@
 function FindProxyForURL(url, host) {
     if (
-        host == "web.telegram.org" ||
-        shExpMatch(host, "*.telegram.org")
+        host == "telegram.org" ||
+        shExpMatch(host, "*.telegram.org") ||
+        host == "t.me" ||
+        shExpMatch(host, "*.t.me")
     ) {
         return "PROXY 2.26.138.48:6348";
     }
