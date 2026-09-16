@@ -1,11 +1,10 @@
 function FindProxyForURL(url, host) {
     if (
-        host == "web.telegram.org" ||
-        shExpMatch(host, "*.telegram.org")
         host == "telegram.org" ||
-        shExpMatch(host, "*.telegram.org") ||
-        host == "t.me" ||
-        shExpMatch(host, "*.t.me")
+        shExpMatch(host, "*.telegram.org")
     ) {
         return "PROXY 103.200.28.242:20915";
     }
+
+    return "DIRECT";
+}
