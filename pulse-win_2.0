@@ -7,5 +7,5 @@ function FindProxyForURL(url, host) {
         host == "t.me" ||
         shExpMatch(host, "*.t.me")
     ) {
-        return "PROXY 2.26.138.48:6348";
+        return "PROXY 103.200.28.242:20915";
     }
