@@ -1,9 +1,25 @@
 function FindProxyForURL(url, host) {
     if (
+        // Telegram
         host == "telegram.org" ||
         shExpMatch(host, "*.telegram.org") ||
         host == "t.me" ||
-        shExpMatch(host, "*.t.me")
+        shExpMatch(host, "*.t.me") ||
+
+        // ChatGPT и OpenAI
+        host == "chatgpt.com" ||
+        shExpMatch(host, "*.chatgpt.com") ||
+        host == "openai.com" ||
+        shExpMatch(host, "*.openai.com") ||
+        host == "oaistatic.com" ||
+        shExpMatch(host, "*.oaistatic.com") ||
+        host == "oaiusercontent.com" ||
+        shExpMatch(host, "*.oaiusercontent.com") ||
+        host == "auth0.com" ||
+        shExpMatch(host, "*.auth0.com") ||
+        shExpMatch(host, "*.intercom.io") ||
+        shExpMatch(host, "*.intercomcdn.com") ||
+        shExpMatch(host, "*.ct.sendgrid.net")
     ) {
         return "PROXY 103.118.211.57:20915";
     }
